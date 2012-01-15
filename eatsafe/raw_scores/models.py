@@ -10,3 +10,6 @@ class RawScore(models.Model):
     longitude = models.FloatField()
     class Meta:
         db_table = u'raw_scores'
+
+    def __unicode__(self):
+        return u'%s - %s' % (self.name, self.inspect_date)
