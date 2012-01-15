@@ -1,11 +1,11 @@
 from django.db import models
 
-class RawScores(models.Model):
-    name = models.CharField(max_length=-1)
-    zip = models.TextField() # This field type is a guess.
-    inspect_date = models.CharField(max_length=-1)
+class RawScore(models.Model):
+    name = models.CharField(max_length=255)
+    zip = models.CharField(max_length=5)
+    inspect_date = models.CharField(max_length=255)
     score = models.SmallIntegerField()
-    address = models.CharField(max_length=-1)
+    address = models.CharField(max_length=255)
     latitude = models.FloatField()
     longitude = models.FloatField()
     class Meta:
