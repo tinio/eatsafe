@@ -13,8 +13,8 @@
   <!-- 
   <meta name="Viewport" content="width=480; initial-scale=1.0" />
   <meta name="Viewport" content="width=980; initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="http://prashtx.com/munidev/style.css" />
   -->
+  <link rel="stylesheet" type="text/css" href="style.css" />
   <style type="text/css">
   /* <![CDATA[ */
 body {
@@ -209,12 +209,18 @@ body>#contents {
       }
       $('<div class="itemcontainer"><div class="item"><div class="score-container ' + color + '"><div class="score">' + item.score + '</div></div><div class="info"><div class="name">' + item.name + '</div><div class="address">' + item.address  +'</div></div></div></div>').appendTo($('#contents-inner'));
     }
-    /*
-    for (item in items)
+    var mapurl = 'http://maps.google.com/maps/api/staticmap?zoom=10&size=200x200&maptype=roadmap';
+    var colors = ['blue','green','red','yellow'];
+    var labels = ['A', 'B', 'C', 'D'];
+    for (i=0;i<items.length;i++)
     {
+      item = items[i];
+      mapurl = mapurl + '&markers=color:' + colors[i] + '|label:' + labels[i] + '|' + item.lat + ',' + item.long;
     }
-    */
-    $('<div id="map"><img src="http://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&size=200x200&sensor=false&zoom=5"/></div>').appendTo($('#contents-inner'));
+    mapurl = mapurl + '&sensor=false';
+    $('<div id="map"><img src="' + mapurl + '"/></div>').appendTo($('#contents-inner'));
+    //$('<div id="map"><img src="http://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&size=200x200&sensor=false&zoom=5"/></div>').appendTo($('#contents-inner'));
+    //' + item.lat + ',' + item.long + '&markers=color:green|label:B|30.353308124993,-97.72&markers=color:red|color:red|label:C|30.3263734302155,-97.8064572434446&sensor=false
   }
 
   /* ]]> */
