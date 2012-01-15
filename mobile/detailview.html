@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Up to Code</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=IE7" />
+  <meta name="description" content="Up to Code" />
+  <script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.6.4.min.js" type="text/javascript"></script>
+  <meta name="viewport" content="width=320; initial-scale=1.0" />
+  <!--[if IE]>
+  <meta name="Viewport" content="width=480; initial-scale=1.0" />
+  <![endif]-->
+  <!-- 
+  <meta name="Viewport" content="width=480; initial-scale=1.0" />
+  <meta name="Viewport" content="width=980; initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="http://prashtx.com/munidev/style.css" />
+  -->
+    <link type="text/css" rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+  <script type="text/javascript">
+    /* <![CDATA[ */
+  $(document).ready(function() {
+    // Get Location
+    // XXX Fake the location for now.
+    latlong = '40.714728,-73.998672';
+
+    // Get a few results for this location.
+    fetchResults(latlong, 5);
+
+    // Get a map of these results.
+    // XXX
+
+//      stopList = $('#stopList');
+//
+//      // Set up route list
+//      $('#routeList').html('');
+//      routeAdder('', 'Choose a route');
+//      applyToRoutes(routeAdder);
+//
+//      $("#routeList").change(function(e){
+//        $('#routeList').blur();
+//        updateUIWithRoute($('#routeList').val(), $('#routeList option:selected').html());
+//      });
+//
+//      $("#directionList").change(function(e){
+//        $('#directionList').blur();
+//        updateUIWithDirection($('#directionList').val(), $('#directionList option:selected').html());
+//      });
+//
+//      stopList.change(function(e){
+//        stopList.blur();
+//        updateUIWithStop(stopList.val(), $('#stopList option:selected').html());
+//      });
+//
+//      $("#refresh a").click(function(e){
+//        // stop normal link click
+//        e.preventDefault();
+//        fetchPrediction(selectedInfo.routeTag, selectedInfo.stopId); 
+//      });
+//      readHash();
+    });
+
+  function NO_fetchResults(latlong, count) {
+    url = 'http://someserver/somepath?latlong=' + latlong + 'count=' + count;;
+    // XXX Fetch and process results.
+  }
+
+  function fetchResults(latlong, count) {
+  }
+
+  /* ]]> */
+  </script>
+
+<!--[if IE]><div id="IEROOT"><![endif]-->
+  <div id="contents">
+    <div id="contents-inner">
+      <div id="title">Up to Code</div>
+      <!-- -->
+      <div class="itemcontainer">
+        <div class="item">
+          <div class="score-container ascore"><div class="score">95</div></div>
+          <div class="info"><div class="name">Restaurant Name</div><div class="address">85 2nd St</div></div>
+        </div>
+      </div>
+      <!-- -->
+      <div id="map">
+        <img src="http://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&size=200x200&sensor=false&zoom=5"/>
+      </div>
+      <div id="insp-hist-title">
+      History of inspections:<br />     
+      	<div class="insp-hist">
+        12/12/12: Score of 99<br />
+        12/12/10: Score of 82<br />
+        12/12/08: Score of 75<br />
+      	</div>
+      </div>
+      </div>
+    </div>
+  </div>
+<!--[if IE]></div><![endif]-->
+</body>
+</html>
+
